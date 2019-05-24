@@ -1,0 +1,16 @@
+<!-- Emanuele Aucone -->
+
+<launch> 
+
+ <!-- Turtlesim Node -->
+  <node pkg="turtlesim" type="turtlesim_node" name="turtle1" output="screen"/>
+
+ <!-- Controller Node -->
+  <node name="controller" pkg="exercise2" type="controller" output="screen">
+   <param name="SATmin_longVel" value="$(arg SATmin_longVel)"/>
+   <param name="SATmax_longVel" value="$(arg SATmax_longVel)"/>
+   <param name="SATmin_yawRate" value="$(arg SATmin_yawRate)"/>
+   <param name="SATmax_yawRate" value="$(arg SATmax_yawRate)"/>
+  </node>
+
+</launch>

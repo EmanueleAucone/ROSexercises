@@ -1,0 +1,11 @@
+<!-- Emanuele Aucone -->
+
+<launch> 
+
+ <!-- Turtlesim Node with turtle at the centre-->
+  <node pkg="turtlesim" type="turtlesim_node" name="turtle1" output="screen"/>
+
+ <!-- Random Controller Node -->
+  <node pkg="exercise3" type="random_controller" name="random_controller" output="screen"/>
+
+</launch>

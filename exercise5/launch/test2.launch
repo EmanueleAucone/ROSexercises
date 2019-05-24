@@ -1,0 +1,18 @@
+<!-- Emanuele Aucone -->
+
+<launch> 
+
+ <!-- Turtlesim Nodes -->
+  <node pkg="turtlesim" type="turtlesim_node" name="turtle1" output="screen"/>
+
+ <!-- Spawn three more turtles -->
+  <node pkg="rosservice" type="rosservice" name="create_turtle2" args='call --wait /spawn "{x: 9.0,y: 6.5, theta: 0.0, name: turtle2}" ' output="screen"/>
+  <node pkg="rosservice" type="rosservice" name="create_turtle3" args='call --wait /spawn "{x: 7.5,y: 4.2, theta: 0.0, name: turtle3}"' output="screen"/>
+
+ <!-- Spawn turtle controller -->
+  <node name="turtle1_controller" pkg="exercise5" type="50Hz_controller" output="screen">
+	<param name="desired_x" value="$(arg desired_x)"/>
+	<param name="desired_y" value="$(arg desired_y)"/>
+  </node>
+
+</launch>
